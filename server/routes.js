@@ -11,6 +11,7 @@ import fooController from './controllers/foos.js'
 // Here we demonstrate that JavaScript files can be included from TypeScript
 // files on the server side.
 import catsController from './controllers/cats.js'
+import usersController from './controllers/users.js'
 
 
 export default () => {
@@ -18,6 +19,7 @@ export default () => {
   // Think of the poor foos.
   prefixRouter.use('/foos', fooController)
   prefixRouter.use('/cats', catsController)
+  prefixRouter.use('/users', usersController)
 
   return prefixRouter
 }
