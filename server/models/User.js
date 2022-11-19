@@ -1,6 +1,6 @@
-import pool from './server/database.js';
+import pool from '../database.js'
 
-class User {
+export default class User {
   id;
   username;
   email;
@@ -53,4 +53,3 @@ class User {
 
 }
 
-module.exports =  User ;

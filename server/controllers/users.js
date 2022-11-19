@@ -4,8 +4,6 @@ import User from '../models/User.js';
 import authenticate from '../middleware/authenticate.js';
 import authorize from '../middleware/authorize.js';
 
-
-
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
 export default Router()
