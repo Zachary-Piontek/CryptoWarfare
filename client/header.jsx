@@ -1,16 +1,9 @@
-import Navigation from './navigation';
-import styles from './header.module.css';
+import './header.css';
 
 export default function Header() {
   return (
-    <header className={styles.Header}>
-
-      <h1>My App</h1>
-
-      <div className={styles.NavigationContainer}>
-        <Navigation />
-      </div>
-
+    <header className="header">
+      <h1>CryptoWarfare</h1>
     </header>
   );
 }

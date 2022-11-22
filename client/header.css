@@ -1,0 +1,5 @@
+h1 {
+    display: grid;
+    justify-items: center;
+    font-size: 3rem;
+}

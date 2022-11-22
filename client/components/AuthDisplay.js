@@ -1,5 +1,5 @@
 import { signOut, signUp, signIn } from "../services/users.js";
-import { useNavigate } from "react-router-dom";
+import './authdisplay.css';
 
 const handleSignUp = async (event) => {
   event.preventDefault();
@@ -28,25 +28,28 @@ const handleSignIn = async (event) => {
     await signIn(user);
 };
 
+const hangleSignOut = async (event) => {
+    event.preventDefault();
+    await signOut();
+};
+
 const AuthDisplay = () => {
-    const navigate = useNavigate();
 
     return (
-        <div>
+        <div className="auth-display">
         <form onSubmit={handleSignUp}>
             <input type="text" name="username" placeholder="username" />
             <input type="email" name="email" placeholder="email" />
             <input type="password" name="password" placeholder="password" />
-            <button onClick={() => {
-                navigate('/foos');
-            }}>Sign Up</button>
+            <button>Sign Up</button>
         </form>
         <form onSubmit={handleSignIn}>
             <input type="email" name="email" placeholder="email" />
             <input type="password" name="password" placeholder="password" />
-            <button onClick={() => {
-                navigate('/foos');
-            }}>Sign In</button>
+            <button>Sign In</button>
+        </form>
+        <form onSubmit={hangleSignOut}>
+            <button>Sign Out</button>
         </form>
         </div>
     );
