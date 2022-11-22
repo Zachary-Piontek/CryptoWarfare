@@ -9,7 +9,7 @@ const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 export default Router()
   .post('/', async (req, res, next) => {
     try {
-      const user = await UserService.create(req.body);
+      const user = await UserService.signUp(req.body);
       res.json(user);
     } catch (e) {
       next(e);
@@ -32,6 +32,15 @@ export default Router()
     }
   })
 
+  .get('/me', authenticate, async (req, res, next) => {
+    try {
+      const user = await User.findById(req.user.id);
+      res.json(user);
+    } catch (e) {
+      next(e);
+    }
+              })
+
   .get('/', [authenticate, authorize], async (req, res, next) => {
     try {
       const users = await User.getAll();
@@ -41,6 +50,18 @@ export default Router()
     }
   })
 
-
+  .delete('/sessions', authenticate, async (req, res, next) => {  
+    try {
+      const { sessionToken } = req.cookies;
+      const user = await UserService.signOut(sessionToken);
+      res.clearCookie(process.env.COOKIE_NAME).json(user);
+    } catch (e) {
+      next(e);
+    }
+  })
+  
 ;
+
+
+
 

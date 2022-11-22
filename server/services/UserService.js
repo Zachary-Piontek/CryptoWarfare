@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 export default class UserService {
+
   static async signUp({ username, email, password }) {
     const passwordHash = await bcrypt.hash(
       password,
@@ -26,10 +27,11 @@ export default class UserService {
       if (!bcrypt.compareSync(password, user.passwordHash))
         throw new Error('Invalid password');
 
-      const token = jwt.sign({ ...user }, process.env.JWT_SECRET, {
-        expiresIn: '1 day',
-      });
-
+        const token = jwt.sign({ ...user }, process.env.JWT_SECRET, {
+          expiresIn: '1 day',
+        });
+        console.log(process.env.JWT_SECRET);
+        console.log(token);
       return token;
     } catch (error) {
       error.status = 401;

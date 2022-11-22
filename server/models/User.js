@@ -47,9 +47,20 @@ export default class User {
 
   static async getAll() {
     const { rows } = await pool.query('SELECT * FROM users');
-
     return rows.map((row) => new User(row));
   }
 
+  static async delete(id) {
+    const { rows } = await pool.query(
+      `
+      DELETE FROM users
+      WHERE id=$1
+      RETURNING *
+      `,
+      [id]
+    );
+
+    return new User(rows[0]);
+  }
 }
 

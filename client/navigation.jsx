@@ -7,7 +7,6 @@ export default function Navigation() {
     <nav className={styles.navigation}>
       <NavLink className={linkStyles.navigation} to="">Home</NavLink>
       <NavLink className={linkStyles.navigation} to="foos">foos</NavLink>
-      <NavLink className={linkStyles.navigation} to="cats">cats</NavLink>
-    </nav>
+      <NavLink className={linkStyles.navigation} to="cats">cats</NavLink>    </nav>
   );
 }

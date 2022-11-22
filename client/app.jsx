@@ -9,6 +9,7 @@ import catListFn from './components/cat-list'
 import dashboardFn from './components/dashboard'
 import Layout from './layout'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import AuthDisplay from './components/AuthDisplay.js';
 
 const FooList = fooListFn()
 const CatList = catListFn()
@@ -20,10 +21,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route element={ <Layout /> }>
+        <Route element={ <><Layout /><AuthDisplay /></> }>
           <Route index element={ <Dashboard /> } />
           <Route path="foos" element={ <FooList /> } />
           <Route path="cats" element={ <CatList /> } />
+          <Route path="*" element={ <div>404</div> } />
         </Route>
       </Routes>
     </Router>

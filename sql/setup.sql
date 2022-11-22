@@ -8,7 +8,7 @@ create table users (
   id bigint generated always as identity primary key,
   username text not null,
   email text not null,
-  password text not null
+  password_hash text not null
 );
 
 create table foos (
