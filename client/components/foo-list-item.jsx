@@ -54,3 +54,5 @@ export default (
   component.displayName = 'FooListItem'
   return component
 }
+
+

@@ -50,11 +50,14 @@ export default Router()
     }
   })
 
-  .delete('/sessions', authenticate, async (req, res, next) => {  
+  .delete('/sessions', async (req, res, next) => {  
     try {
-      const { sessionToken } = req.cookies;
-      const user = await UserService.signOut(sessionToken);
-      res.clearCookie(process.env.COOKIE_NAME).json(user);
+        res.cookie(process.env.COOKIE_NAME, {
+        httpOnly: true,
+        maxAge: ONE_DAY_IN_MS,
+      }) 
+      .status(204)
+      .send();
     } catch (e) {
       next(e);
     }

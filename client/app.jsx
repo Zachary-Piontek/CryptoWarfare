@@ -11,6 +11,7 @@ import Layout from './layout'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AuthDisplay from './components/AuthDisplay.js';
 
+
 const FooList = fooListFn()
 const CatList = catListFn()
 const Dashboard = dashboardFn()
@@ -21,10 +22,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route element={ <><Layout /><AuthDisplay /></> }>
+        <Route element={ <Layout /> }>
           <Route index element={ <Dashboard /> } />
           <Route path="foos" element={ <FooList /> } />
           <Route path="cats" element={ <CatList /> } />
+          <Route path="login" element={ <AuthDisplay /> } />
           <Route path="*" element={ <div>404</div> } />
         </Route>
       </Routes>

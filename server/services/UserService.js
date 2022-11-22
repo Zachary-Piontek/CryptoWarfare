@@ -30,13 +30,21 @@ export default class UserService {
         const token = jwt.sign({ ...user }, process.env.JWT_SECRET, {
           expiresIn: '1 day',
         });
-        console.log(process.env.JWT_SECRET);
-        console.log(token);
       return token;
     } catch (error) {
       error.status = 401;
       throw error;
     }
+  }
+
+  static async signOut(sessionToken) {
+    const user = await User.getBySessionToken(sessionToken);
+    if (!user) throw new Error('Invalid session token');
+
+    user.sessionToken = null;
+    await user.update();
+
+    return user;
   }
 
 }

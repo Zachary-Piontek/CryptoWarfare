@@ -38,14 +38,14 @@ export async function signIn(user) {
     }
 }
 
-export const signOut = () => {
-    return fetch(`${BASE_URL}/users/sessions`, {
+export async function signOut() {
+    const res = await fetch(`${BASE_URL}/users/sessions`, {
         method: 'DELETE',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-    }).then((res) => res.json());
+    });
+    if (res) {
+        console.log('logged out');
     }
+}
 
 export const getUser = () => {
     return fetch(`${BASE_URL}/users/me`, {
