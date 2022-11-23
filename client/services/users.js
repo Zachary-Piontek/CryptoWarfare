@@ -41,6 +41,7 @@ export async function signIn(user) {
 export async function signOut() {
     const res = await fetch(`${BASE_URL}/users/sessions`, {
         method: 'DELETE',
+        credentials: 'include',
     });
     if (res) {
         console.log('logged out');
@@ -50,11 +51,18 @@ export async function signOut() {
 export const getUser = () => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
+        credentials: 'include',
         headers: {
         'Content-Type': 'application/json',
         },
-    }).then((res) => res.json());
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+        return data;
     }
+    );
+};
 
 
 

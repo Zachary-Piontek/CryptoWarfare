@@ -1,61 +1,91 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { signOut, signUp, signIn } from "../services/users.js";
 import './authdisplay.css';
 
-const handleSignUp = async (event) => {
-  event.preventDefault();
+export default function AuthDisplay(props) {
+  const [form, setForm] = useState({ username: '', email: "", password: "" });
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  const formData = new FormData(event.target);
-
-  const user = {
-    username: formData.get('username'),
-    email: formData.get('email'),
-    password: formData.get('password'),
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
   };
-  await signUp(user);
 
-};
-
-const handleSignIn = async (event) => {
-    event.preventDefault();  
-    const formData = new FormData(event.target);
-
-    const user = {
-      username: formData.get('username'),
-      email: formData.get('email'),
-      password: formData.get('password'),
-    };
-    console.log(user);
-    await signIn(user);
-};
-
-const hangleSignOut = async (event) => {
+  const handleSignUp = async (event) => {
     event.preventDefault();
-    await signOut();
-};
+    try {
+      await signUp(form);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
-const AuthDisplay = () => {
+  const handleSignIn = async (event) => {
+    event.preventDefault();
+    try {
+      await signIn(form);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
-    return (
-        <div className="auth-display">
-        <form onSubmit={handleSignUp}>
-            <input type="text" name="username" placeholder="username" />
-            <input type="email" name="email" placeholder="email" />
-            <input type="password" name="password" placeholder="password" />
-            <button>Sign Up</button>
-        </form>
-        <form onSubmit={handleSignIn}>
-            <input type="email" name="email" placeholder="email" />
-            <input type="password" name="password" placeholder="password" />
-            <button>Sign In</button>
-        </form>
-        <form onSubmit={hangleSignOut}>
-            <button>Sign Out</button>
-        </form>
-        </div>
-    );
-    };
+  const handleSignOut = async (event) => {
+    event.preventDefault();
+    try {
+      await signOut();
+      navigate("/auth");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  return (
+    <div className="auth-display">
+      <h1>Auth Display</h1>
+      <form onSubmit={handleSignUp}>
+        <input 
+        type="text" 
+        name="username" 
+        value={form.username} 
+        onChange={handleChange} />
+        <input
+          type="text"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+      <form onSubmit={handleSignIn}>
+        <input
+          type="text"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+        />
+        <button type="submit">Sign In</button>
+      </form>
+      <button onClick={handleSignOut}>Sign Out</button>
+      {error && <p>{error}</p>}
+    </div>
+  );
+}
 
 
-export default AuthDisplay;
     
 

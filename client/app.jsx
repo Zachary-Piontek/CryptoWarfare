@@ -16,7 +16,8 @@ root.render(
     <Router>
     <Header />
       <Routes>
-          <Route path="/" element={ <AuthDisplay /> } />
+          <Route path="/auth" element={ <AuthDisplay /> } />
+          <Route path="/" element={ <h1>Home</h1> } />
           <Route path="*" element={ <div>404</div> } />
       </Routes>
     <Footer />

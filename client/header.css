@@ -1,5 +1,18 @@
+header {
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+}
+
 h1 {
     display: grid;
     justify-items: center;
     font-size: 3rem;
+    width: 100vw;
+}
+
+nav a {
+    display: grid;
+    justify-items: end;
+    margin-right: 2%;
 }
