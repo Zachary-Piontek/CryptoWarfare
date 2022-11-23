@@ -49,17 +49,20 @@ export default function AuthDisplay(props) {
         <input 
         type="text" 
         name="username" 
+        placeholder="username"
         value={form.username} 
         onChange={handleChange} />
         <input
           type="text"
           name="email"
+          placeholder="email"
           value={form.email}
           onChange={handleChange}
         />
         <input
           type="password"
           name="password"
+          placeholder="password"
           value={form.password}
           onChange={handleChange}
         />
@@ -69,12 +72,14 @@ export default function AuthDisplay(props) {
         <input
           type="text"
           name="email"
+          placeholder="email"
           value={form.email}
           onChange={handleChange}
         />
         <input
           type="password"
           name="password"
+          placeholder="password"
           value={form.password}
           onChange={handleChange}
         />

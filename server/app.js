@@ -12,12 +12,14 @@ import path from 'node:path'
 import routes from './routes.js'
 import errorHandler from './middleware/error.js'
 import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
 
 dotenv.config()
 
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
+app.use(bodyParser.json())
 app.use(process.env.API_PREFIX || '', routes())
 // Ordinarily we'd use __dirname as a base directory, but issues that arise from
 // https://github.com/kulshekhar/ts-jest/issues/1174 cause problems with not

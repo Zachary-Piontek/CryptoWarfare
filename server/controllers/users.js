@@ -34,9 +34,8 @@ export default Router()
 
   .get('/me', authenticate, async (req, res, next) => {
     try {
-      const user = await User.findById(req.user.id);
-      res.json(user);
-    } catch (e) {
+      res.json(req.user);
+      } catch (e) {
       next(e);
     }
               })
