@@ -5,7 +5,7 @@ export default function Nav() {
   return (
     <nav className="nav">
       <Link to="/">Home</Link>
-      <Link to="/auth">Auth</Link>
+      <Link to="/auth">Login</Link>
     </nav>
   );
 }

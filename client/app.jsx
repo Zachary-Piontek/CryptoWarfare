@@ -5,7 +5,8 @@ import './global.css';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AuthDisplay from './components/AuthDisplay.js';
 import Header from './header.jsx';
-import Footer from './footer.jsx';
+import Footer from './footer.js';
+import Home from './components/Home.js';
 
 
 const container = document.getElementById('app') || document.createElement('div')
@@ -16,8 +17,8 @@ root.render(
     <Router>
     <Header />
       <Routes>
+          <Route path="/" element={ <Home /> } />
           <Route path="/auth" element={ <AuthDisplay /> } />
-          <Route path="/" element={ <h1>Home</h1> } />
           <Route path="*" element={ <div>404</div> } />
       </Routes>
     <Footer />
