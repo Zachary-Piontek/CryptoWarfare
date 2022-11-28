@@ -54,6 +54,18 @@ export default function Footer() {
           <div>
             <img src={data[9].image} alt={data[9].name} />
           </div>
+          <div>
+            <img src={data[10].image} alt={data[10].name} />
+          </div>
+          <div>
+            <img src={data[11].image} alt={data[11].name} />
+          </div>
+          <div>
+            <img src={data[12].image} alt={data[12].name} />
+          </div>
+          <div>
+            <img src={data[13].image} alt={data[13].name} />
+          </div>
     </footer>
   );
 }

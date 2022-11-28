@@ -1,11 +1,11 @@
 footer {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(14, 1fr);
     justify-content: center;
     position: fixed;
     bottom: 0;
     max-height: 10vh;
-    grid-gap: 1rem;
+    grid-gap: 3rem;
 }
 
 img {
@@ -14,13 +14,17 @@ img {
 
 footer div {
     animation: moving 20s linear infinite;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    justify-content: center;
+    grid-gap: 1rem;
 }
 
 @keyframes moving {
     0% {
-        transform: translateX(-2000%);
+        transform: translateX(-1000%);
     }
     100% {
-        transform: translateX(2000%);
+        transform: translateX(1000%);
     }
 }
