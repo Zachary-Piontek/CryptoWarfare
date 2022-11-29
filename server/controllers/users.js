@@ -51,7 +51,7 @@ export default Router()
 
   .delete('/sessions', async (req, res, next) => {  
     try {
-        res.cookie(process.env.COOKIE_NAME, {
+        res.clearCookie(process.env.COOKIE_NAME, {
         httpOnly: true,
         maxAge: ONE_DAY_IN_MS,
       }) 

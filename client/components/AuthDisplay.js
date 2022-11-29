@@ -44,7 +44,7 @@ export default function AuthDisplay(props) {
 
   return (
     <div className="auth-display">
-      <h1>Auth Display</h1>
+      <h2>Register</h2>
       <form onSubmit={handleSignUp}>
         <input 
         type="text" 
@@ -68,6 +68,7 @@ export default function AuthDisplay(props) {
         />
         <button type="submit">Sign Up</button>
       </form>
+      <h2>Sign In</h2>
       <form onSubmit={handleSignIn}>
         <input
           type="text"

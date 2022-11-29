@@ -3,3 +3,18 @@ div {
     justify-items: center;
 }
 
+h2 {
+    font-size: 2rem;
+    color: al;
+}
+
+.auth-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    width: 100vw;
+    justify-items: center;
+}
+
+
+
