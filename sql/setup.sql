@@ -16,6 +16,7 @@ create table coins (
   name text not null,
   symbol text not null,
   price numeric not null,
+  market_cap numeric not null,
   percent_change_24h numeric not null,
   favorite boolean not null
 );
@@ -25,3 +26,9 @@ create table users_favorite_coins (
   coins_id bigint not null,
   foreign key (coins_id) references users(id)
 );
+
+insert into users (username, email, password_hash) 
+values ('allCryptoGone', 'nocrypto@gmail.com', 'password');
+
+insert into coins (name, symbol, price, market_cap, percent_change_24h, favorite)
+values ('Bitcoin', 'BTC', 10000, 1, true);

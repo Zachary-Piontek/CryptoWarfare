@@ -5,6 +5,7 @@ export default class Coin {
     name;
     symbol;
     price;
+    marketCap;
     percent_change_24h;
     favorite;
 
@@ -13,6 +14,7 @@ export default class Coin {
         this.name = row.name;
         this.symbol = row.symbol;
         this.price = row.price;
+        this.marketCap = row.market_cap;
         this.percent_change_24h = row.percent_change_24h;
         this.favorite = row.favorite;
     }
