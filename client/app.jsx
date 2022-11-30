@@ -7,14 +7,17 @@ import AuthDisplay from './components/AuthDisplay.js';
 import Header from './header.jsx';
 import Footer from './footer.js';
 import Home from './components/Home.js';
+import { UserProvider } from './context/userContext.js';
 
 
 const container = document.getElementById('app') || document.createElement('div')
 container.id = 'app'
 const root = createRoot(container);
+
 root.render(
   <React.StrictMode>
     <Router>
+    <UserProvider>
     <Header />
       <Routes>
           <Route path="/" element={ <Home /> } />
@@ -22,6 +25,7 @@ root.render(
           <Route path="*" element={ <div>404</div> } />
       </Routes>
     <Footer />
+    </UserProvider>
     </Router>
   </React.StrictMode>
 );

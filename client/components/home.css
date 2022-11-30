@@ -22,9 +22,24 @@ main div {
 }
 
 main div button {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
     background-color: grey;
     cursor: pointer;
+    size: 1rem;
     border: none;
-    max-height: 4vh;
-    padding: 1rem;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;   
 }
+
+a {
+    text-decoration: none;
+    color: rgb(197, 141, 0);
+}
+

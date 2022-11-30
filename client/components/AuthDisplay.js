@@ -34,12 +34,10 @@ export default function AuthDisplay(props) {
 
   const handleSignOut = async (event) => {
     event.preventDefault();
-    try {
-      await signOut();
-      navigate("/auth");
-    } catch (error) {
-      setError(error.message);
-    }
+    await signOut();
+    navigate("/");
+
+
   };
 
   return (
@@ -89,6 +87,7 @@ export default function AuthDisplay(props) {
       <button onClick={handleSignOut}>Sign Out</button>
       {error && <p>{error}</p>}
     </div>
+
   );
 }
 

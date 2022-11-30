@@ -1,6 +1,8 @@
+
+
 footer {
     display: grid;
-    grid-template-columns: repeat(14, 1fr);
+    grid-template-columns: repeat(50, 1fr);
     justify-content: center;
     position: fixed;
     bottom: 0;
@@ -8,21 +10,22 @@ footer {
     grid-gap: 3rem;
 }
 
+
 img {
     max-height: 7.5vh;
 }
 
 footer div {
-    animation: moving 20s linear infinite;
+    animation: moving 120s linear infinite;
     display: grid;
-    grid-template-columns: repeat(14, 1fr);
+    grid-template-columns: repeat(50, 1fr);
     justify-content: center;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
 }
 
 @keyframes moving {
     0% {
-        transform: translateX(-1000%);
+        transform: translateX(-1500%);
     }
     100% {
         transform: translateX(1000%);
