@@ -21,14 +21,14 @@ create table coins (
   favorite boolean not null
 );
 
-create table users_favorite_coins (
+create table if not exists users_favorite_coins (
   id bigint generated always as identity primary key,
-  coins_id bigint not null,
-  foreign key (coins_id) references users(id)
+	user_id bigint null,
+	coins_ids text null
 );
 
 insert into users (username, email, password_hash) 
 values ('allCryptoGone', 'nocrypto@gmail.com', 'password');
 
 insert into coins (name, symbol, price, market_cap, percent_change_24h, favorite)
-values ('Bitcoin', 'BTC', 10000, 1, true);
+values ('Bitcoin', 'BTC', 10000, 444444444444, 1, true);
