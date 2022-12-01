@@ -39,20 +39,16 @@ export async function signIn(user) {
 }
 
 
-export const getUser = () => {
-    return fetch(`${BASE_URL}/users/me`, {
+export const getUser = async () => {
+    const res = await fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
         credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
         },
     })
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data);
-        return data;
-    }
-    );
+
+    return await res.json()
 }
 
 export async function signOut() {
@@ -65,9 +61,32 @@ export async function signOut() {
     }
 }
 
+export async function getUserFavorites() {
+    const res = await fetch(`${BASE_URL}/favorites/userfavorites`, {
+        method: 'GET',
+        credentials: 'include',
+    })
 
+    return await res.json()
+}
 
+export async function getUserFavoritesData() {
+    const res = await fetch(`${BASE_URL}/favorites/coins/userfavorites`, {
+        method: 'GET',
+        credentials: 'include',
+    })
+    return await res.json()
+}
 
+export async function addCoinToUserFavorites(coin_id) {
+    const res = await fetch(`${BASE_URL}/favorites/add/userfavorites`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ coin_id }),
+    })
 
-
-
+    return await res.json()
+}
