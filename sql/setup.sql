@@ -2,7 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`.
 drop table if exists users;
 drop table if exists coins;
-drop table if exists favorites;
+drop table if exists users_favorite_coins;
 
 create table users (
   id bigint generated always as identity primary key,
@@ -21,7 +21,7 @@ create table coins (
   favorite boolean not null
 );
 
-create table if not exists users_favorite_coins (
+create table users_favorite_coins (
   id bigint generated always as identity primary key,
 	user_id bigint null,
 	coins_ids text null
