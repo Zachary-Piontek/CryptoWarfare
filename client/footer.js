@@ -22,11 +22,12 @@ export default function Footer() {
     return null;
   }
 
+
   return (
     <footer className="footer">
       {data.map(coin => {
         return ( 
-          <div>
+          <div key={coin.id}>
             <img src={coin.image} alt={coin.name} />             
           </div>
         )

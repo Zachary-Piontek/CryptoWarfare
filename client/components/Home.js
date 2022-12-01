@@ -16,7 +16,12 @@ export default function Home() {
       console.log(err);
     })
   }, [])
-  
+
+  const [search, setSearch] = useState('');
+  const filteredCoins = data?.filter(coin =>
+    coin.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   console.log(data);
   
     if (!data) {
@@ -24,7 +29,10 @@ export default function Home() {
     }
 
     return (
-
+<>
+            <form>
+              <input type="text" placeholder='search' onChange={e => setSearch(e.target.value)} />
+            </form>
     <main className="main">
           <div>
             <p id="label">Symbol</p>
@@ -34,9 +42,9 @@ export default function Home() {
             <p className="label">24 Hour Price Change</p>
             <p className="label">Add to Favorites</p>
           </div>
-           {data.map(coin => {
+           {filteredCoins?.map(coin => {
              return ( 
-              <div>
+              <div key={coin.id}>
                  <img src={coin.image} alt={coin.name} />
                  <p className="coin-name">{coin.name}</p>
                 <p className="coin-price">${coin.current_price}</p>
@@ -47,5 +55,6 @@ export default function Home() {
             )
           })}
     </main>
+</>
     )
   }
