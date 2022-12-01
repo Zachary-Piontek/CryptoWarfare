@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut, signUp, signIn } from "../services/users.js";
-import './authdisplay.css';
+import styles from './authdisplay.module.css';
 
 export default function AuthDisplay(props) {
   const [form, setForm] = useState({ username: '', email: "", password: "" });
@@ -36,14 +36,13 @@ export default function AuthDisplay(props) {
     event.preventDefault();
     await signOut();
     navigate("/");
-
-
   };
 
   return (
-    <div className="auth-display">
-      <h2>Register</h2>
-      <form onSubmit={handleSignUp}>
+    <div className={styles.authMainDiv}>
+      <div className={styles.authDiv}>
+      <h2 className={styles.loginFont}>Register</h2>
+      <form className={styles.auth} onSubmit={handleSignUp}>
         <input 
         type="text" 
         name="username" 
@@ -64,10 +63,12 @@ export default function AuthDisplay(props) {
           value={form.password}
           onChange={handleChange}
         />
-        <button type="submit">Sign Up</button>
+        <button className={styles.authButton} type="submit">Register</button>
       </form>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSignIn}>
+      </div>
+      <div className={styles.authDiv}>
+      <h2 className={styles.loginFont}>Sign In</h2>
+      <form className={styles.auth} onSubmit={handleSignIn}>
         <input
           type="text"
           name="email"
@@ -82,10 +83,13 @@ export default function AuthDisplay(props) {
           value={form.password}
           onChange={handleChange}
         />
-        <button type="submit">Sign In</button>
+        <button className={styles.authButton} type="submit">Sign In</button>
       </form>
-      <button onClick={handleSignOut}>Sign Out</button>
+      </div>
+      <div className={styles.authDiv}>
+      <button className={styles.authButton} onClick={handleSignOut}>Sign Out</button>
       {error && <p>{error}</p>}
+      </div>
     </div>
 
   );
