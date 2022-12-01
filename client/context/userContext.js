@@ -1,10 +1,10 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState, useContext } from 'react';
 import { getUser } from '../services/users.js';
 
 const UserContext = createContext();
 
-const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -13,11 +13,11 @@ const UserProvider = ({ children }) => {
     };
     fetchUser();
   }, []);
-  
+
 
   return <UserContext.Provider value={{ user, setUser }}>
     {children}
   </UserContext.Provider>;
 };
 
-export { UserContext, UserProvider };
+export const useUser = () => useContext(UserContext)
