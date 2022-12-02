@@ -42,8 +42,6 @@ export default Router()
         }
     })
 
-    
-
     .post('/add/userfavorites',authenticate, async (req, res, next) => {
         const { coin_id } = req.body
         try {
@@ -62,35 +60,3 @@ export default Router()
             next(error);
         }
     })
-
-// export default Router()
-    
-
-//     .get('/favorites', async (req, res, next) => {
-//         try {
-//             const favorites = await FavoriteService.getAllFavorites();
-//             res.send(favorites);
-//         } catch (error) {
-//             next(error);
-//         }
-//     })
-//     .post('/:id/favorites', async (req, res, next) => {
-//         try {
-//             const favorite = await FavoriteService.addFavorite(req.body);
-//             res.json(favorite);
-//         } catch (e) {
-//             next(e);
-//         }
-//     })
-    
-    
-//     .delete('/favorites/:id', async (req, res, next) => {
-//         try {
-//             const favorite = await FavoriteService.deleteFavorite(req.params.id);
-//             res.json(favorite);
-//         } catch (e) {
-//             next(e);
-//         }
-//     })
-
-
