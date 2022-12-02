@@ -2,7 +2,9 @@ nav a {
     display: grid;
     font-size: 1.5rem;
     color: whitesmoke;
-    text-shadow: goldenrod 0px 0px 10px;
+    text-shadow: -1px 1px 0px whitesmoke,
+                 -2px 2px 0px black,
+                 -3px 3px 0px goldenrod;
     font-family: 'Courier New', Courier, monospace;
 }
 

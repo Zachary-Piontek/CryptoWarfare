@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <section className="header">
-      <h1>CryptoWarfare</h1>
+      <h1 className={styles.appName}>CryptoWarfare</h1>
       {
         user && <p className={styles.userName}>{user.username}</p>
         }

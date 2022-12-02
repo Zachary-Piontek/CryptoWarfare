@@ -10,7 +10,7 @@ export default function Home() {
     const [search, setSearch] = useState('');
     const [filteredCoins, setFilteredCoins] = useState([]);
   
-    const COINGECKO_API = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
+    const COINGECKO_API = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false';
   
     useEffect(() => {
       //fetch coins
@@ -36,7 +36,7 @@ export default function Home() {
         <div>
             <div>
                 <form>
-                    <input type="text" placeholder="Search" onChange={handleChange} />
+                    <input type="text" placeholder="Search Artillery" onChange={handleChange} />
                 </form>
             </div>
             <CoinsTable data={filteredCoins} />

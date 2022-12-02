@@ -4,7 +4,7 @@ import './nav.css';
 export default function Nav() {
   return (
     <nav className="nav">
-      <Link to="/">Home</Link>
+      <Link to="/">Artillery</Link>
       <Link to="/news">Recon</Link>
       <Link to="/favorites">Bunker</Link>
       <Link to="/nfts">NFT's</Link>

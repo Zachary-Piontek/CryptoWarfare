@@ -25,17 +25,6 @@ header {
     align-content: center;
 }
 
-h1 {
-    display: grid;
-    justify-items: center;
-    font-size: 4rem;
-    width: 100vw;
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 10px goldenrod;
-    margin-bottom: 1vh;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 section {
     display: grid;
     justify-items: center;
