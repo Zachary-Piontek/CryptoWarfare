@@ -8,35 +8,44 @@ export default function AuthDisplay(props) {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleChange = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
+  const handleSignOut = () => {
+    signOut()
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => {
+        setError(err);
+      });
   };
 
-  const handleSignUp = async (event) => {
-    event.preventDefault();
-    try {
-      await signUp(form);
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    signIn(form)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => {
+        setError(err);
+      });
   };
 
-  const handleSignIn = async (event) => {
-    event.preventDefault();
-    try {
-      await signIn(form);
-      setUser(await signIn(form));
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    signUp(form)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => {
+        setError(err);
+      });
   };
 
-  const handleSignOut = async (event) => {
-    event.preventDefault();
-    await signOut();
-    navigate("/");
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (

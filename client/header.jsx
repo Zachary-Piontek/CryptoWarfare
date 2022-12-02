@@ -2,7 +2,6 @@ import Nav from './components/Navigation.jsx';
 import { useUser } from './context/userContext.js';
 import styles from './header.module.css';
 
-
 export default function Header() {
   const { user } = useUser();
 

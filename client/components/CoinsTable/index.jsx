@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { getUserFavorites, addCoinToUserFavorites } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/userContext.js";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AiOutlineMinus } from "react-icons/ai";
+import { GiBulletBill } from "react-icons/gi";
 import styles from './style.module.css';
 
 export default function CoinsTable({ data, refetchData = async () => false }) {
@@ -25,30 +26,30 @@ export default function CoinsTable({ data, refetchData = async () => false }) {
     }
 
     return (
-        <div className="coinstable">
+        <div className={styles.coinsTable}>
             {
             data.length ? <main className="main">
-                <div>
-                    <p id="label">Symbol</p>
-                    <p className="label">Name</p>
-                    <p className="label">Price</p>
-                    <p className='label'>Market Cap</p>
-                    <p className="label">24 Hour Price Change</p>
-                    <p className="label">Add to Bunker</p>
+                <div className={styles.coinLabels}>
+                    <p>Symbol</p>
+                    <p>Name</p>
+                    <p>Price</p>
+                    <p>Market Cap</p>
+                    <p>24 Hour Price Change</p>
+                    <p>Add to Bunker</p>
                 </div>
                     {
                 data.map(coin => {
                     return (
-                <div key={coin.id}>
+                <div key={coin.id} className={styles.coin}>
                         <img src={coin.image} alt={coin.name} />
                         <p className="coin-name">{coin.name}</p>
                         <p className="coin-price">${coin.current_price}</p>
                         <p className='market-cap'>${coin.market_cap.toLocaleString()}</p>
                         <p className="coin-price">% {coin.price_change_percentage_24h}</p>
-                    <button className='favorite' onClick={() =>             handleAddToFavorites(coin.id)}>
+                    <button className={styles.favoriteButton} onClick={() =>             handleAddToFavorites(coin.id)}>
                                 {
                             userFavorites?.coins_ids?.split(',').includes(coin.id)
-                                ? <AiOutlineMinus /> : <AiOutlinePlus />
+                                ? <AiOutlineMinus /> : <GiBulletBill />
                                 }
                     </button>
                 </div>

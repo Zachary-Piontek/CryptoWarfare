@@ -1,9 +1,43 @@
 .noCryptos {
-  display: flex;
+  display: grid;
   justify-content: center;
   height: 100%;
   font-size: 4rem;
   font-weight: 600;
   color: whitesmoke;
   text-shadow: black 0.1em 0.1em 0.2em;
-}   
+} 
+
+.favoriteButton {
+  color: whitesmoke;
+  background-color: black;
+  font-size: 3vw;
+  max-width: 3vw;
+  cursor: pointer;
+}
+
+.coinsTable {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.coin {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.coinLabels {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
