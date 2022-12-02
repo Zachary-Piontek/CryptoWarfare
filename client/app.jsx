@@ -9,6 +9,7 @@ import Footer from './footer.js';
 import { UserProvider } from './context/userContext.js';
 import Favorites from './pages/Favorites/index.jsx';
 import Home from './pages/Home/index.jsx';
+import styles from './noinfo.module.css';
 
 const container = document.getElementById('app') || document.createElement('div')
 container.id = 'app'
@@ -23,7 +24,7 @@ root.render(
           <Route path='/favorites' element={ <Favorites /> } />
           <Route path="/" element={ <Home /> } />
           <Route path="/auth" element={ <AuthDisplay /> } />
-          <Route path="*" element={ <div>404</div> } />
+          <Route path="*" element={ <div className={styles.notThere}>404</div> } />
       </Routes>
     <Footer />
     </UserProvider>

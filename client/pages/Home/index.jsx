@@ -20,7 +20,6 @@ export default function Home() {
     if (!coins.length) return <Loader />
   
     return (
-  
       <div className="home">
         <CoinsTable data={coins} />
       </div>

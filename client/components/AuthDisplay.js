@@ -4,7 +4,7 @@ import { signOut, signUp, signIn } from "../services/users.js";
 import styles from './authdisplay.module.css';
 
 export default function AuthDisplay(props) {
-  const [form, setForm] = useState({ username: '', email: "", password: "" });
+  const [form, setForm] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -26,6 +26,7 @@ export default function AuthDisplay(props) {
     event.preventDefault();
     try {
       await signIn(form);
+      setUser(await signIn(form));
       navigate("/");
     } catch (error) {
       setError(error.message);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getUserFavoritesData } from "../../services/users.js";
 import CoinsTable from "../../components/CoinsTable/index.jsx";
-import './style.scss';
+import styles from './style.module.css';
 import Loader from "../../components/Loader/index.jsx";
 
 export default function Favorites() {
@@ -25,9 +25,7 @@ export default function Favorites() {
     if (loading) return <Loader />
   
     return (
-      <div className='favorites'>
-        <h2>Crypto Foxhole</h2>
-  
+      <div className={styles.favorites}>
         <div className="coins">
           <CoinsTable
             data={favoritesData}

@@ -5,9 +5,10 @@ export default function Nav() {
   return (
     <nav className="nav">
       <Link to="/">Home</Link>
-      <Link to="/auth">Login</Link>
-      <Link to="/favorites">Favorites</Link>
+      <Link to="/news">Recon</Link>
+      <Link to="/favorites">Bunker</Link>
       <Link to="/nfts">NFT's</Link>
+      <Link to="/auth">Enlist</Link>
     </nav>
   );
 }
