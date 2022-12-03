@@ -57,7 +57,7 @@ export default function CoinsTable({ data, refetchData = async () => false }) {
             })
             }
         </main>
-        : <p className={styles.noCryptos}>Enlist to access your Bunker.</p>
+        : <p className={styles.noCryptos}>Enlist to access your Bunker & add artillery.</p>
         }
      </div>
 )}

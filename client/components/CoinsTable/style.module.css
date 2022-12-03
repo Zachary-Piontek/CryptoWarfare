@@ -1,6 +1,11 @@
 .noCryptos {
   display: grid;
   justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
   height: 100%;
   font-size: 4rem;
   font-weight: 600;

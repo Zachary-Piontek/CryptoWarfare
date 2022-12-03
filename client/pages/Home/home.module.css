@@ -1,0 +1,23 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    color: whitesmoke;
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    font-size: 2rem;
+}
+
+.searchDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.button {
+    display: grid;
+    justify-content: center;
+    align-content: space-around;
+    max-width: 5%;
+}

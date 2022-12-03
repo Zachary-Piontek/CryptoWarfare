@@ -22,7 +22,8 @@ export default function AuthDisplay(props) {
     e.preventDefault();
     signIn(form)
       .then(() => {
-        window.location.reload();
+        navigate('/')
+        window.location.reload()
       })
       .catch((err) => {
         setError(err);

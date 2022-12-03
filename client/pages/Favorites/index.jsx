@@ -26,7 +26,7 @@ export default function Favorites() {
   
     return (
       <div className={styles.favorites}>
-        <div className="coins">
+        <div className={styles.coins}>
           <CoinsTable
             data={favoritesData}
             refetchData={refetchData}
