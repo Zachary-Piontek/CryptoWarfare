@@ -21,3 +21,8 @@
     align-content: space-around;
     max-width: 5%;
 }
+
+.tabs {
+    size: 2rem;
+    font-size: 2rem;
+}

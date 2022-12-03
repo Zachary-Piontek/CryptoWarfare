@@ -11,16 +11,16 @@ export default function Home() {
     const [search, setSearch] = useState('');
     const [filteredCoins, setFilteredCoins] = useState([]);
     const [page, setPage] = useState(1);
- 
-const COINGECKO_API = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${page}&sparkline=false`;
+
+    const COINGECKO_API = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${page}&sparkline=false`;
     
     useEffect(() => {
-      //fetch coins
-      axios.get(COINGECKO_API)
+        //fetch coins
+        axios.get(COINGECKO_API)
         .then((res) => 
         {
-          setCoins(res.data);
-          setFilteredCoins(res.data);
+            setCoins(res.data);
+            setFilteredCoins(res.data);
         })
         .catch((error) => console.log(error));
     }, [page]);
@@ -29,7 +29,13 @@ const COINGECKO_API = `https://api.coingecko.com/api/v3/coins/markets?vs_currenc
         setSearch(e.target.value);
         setFilteredCoins(coins.filter(coin =>
             coin.name.toLowerCase().includes(search.toLowerCase())
-        ));
+            ));
+        }
+
+    const prevPage = () => {
+        if (page > 1) {
+            setPage(page - 1);
+        }
     }
     
     if (!coins.length) return <Loader />;
@@ -39,12 +45,12 @@ const COINGECKO_API = `https://api.coingecko.com/api/v3/coins/markets?vs_currenc
     return (
         <div>
             <div className={styles.searchDiv}>
-                <button onClick={() => setPage(page - 1)} className={styles.button}><GiHeavyBullets /></button>
+                <button onClick={prevPage} className={styles.button}><div className={styles.tabs}><GiSupersonicBullet /></div></button>
                 <form className={styles.form}>
                     <input type="text" placeholder="Search Artillery" onChange={handleChange} />
                     <p className={styles.pageNumber}>Page {page}</p>
                 </form>
-                <button onClick={() => setPage(page + 1)} className={styles.button}><GiHeavyBullets /></button>
+                <button onClick={() => setPage(page + 1)} className={styles.button}><div className={styles.tabs}><GiSupersonicBullet /></div></button>
             </div>
             <CoinsTable data={filteredCoins} />
         </div>
