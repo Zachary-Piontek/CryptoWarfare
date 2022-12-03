@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { getUserFavorites, addCoinToUserFavorites } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/userContext.js";
-import { AiOutlineMinus } from "react-icons/ai";
-import { GiBulletBill } from "react-icons/gi";
+import { GiBulletBill, GiTargetArrows } from "react-icons/gi";
 import styles from './style.module.css';
 
 export default function CoinsTable({ data, refetchData = async () => false }) {
@@ -49,7 +48,7 @@ export default function CoinsTable({ data, refetchData = async () => false }) {
                     <button className={styles.favoriteButton} onClick={() =>             handleAddToFavorites(coin.id)}>
                                 {
                             userFavorites?.coins_ids?.split(',').includes(coin.id)
-                                ? <AiOutlineMinus /> : <GiBulletBill />
+                                ? <GiTargetArrows /> : <GiBulletBill />
                                 }
                     </button>
                 </div>

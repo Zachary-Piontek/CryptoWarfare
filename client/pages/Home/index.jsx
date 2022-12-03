@@ -4,7 +4,7 @@ import CoinsTable from "../../components/CoinsTable/index.jsx";
 import './home.css';
 import Loader from "../../components/Loader/index.jsx";
 import styles from './home.module.css';
-import { GiHeavyBullets, GiSupersonicBullet } from "react-icons/gi";
+import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 
 export default function Home() {
     const [coins, setCoins] = useState([]);
@@ -45,12 +45,12 @@ export default function Home() {
     return (
         <div>
             <div className={styles.searchDiv}>
-                <button onClick={prevPage} className={styles.button}><div className={styles.tabs}><GiSupersonicBullet /></div></button>
+                <button onClick={prevPage} className={styles.button}><div className={styles.tabs}><HiArrowLeft /></div></button>
                 <form className={styles.form}>
                     <input type="text" placeholder="Search Artillery" onChange={handleChange} />
                     <p className={styles.pageNumber}>Page {page}</p>
                 </form>
-                <button onClick={() => setPage(page + 1)} className={styles.button}><div className={styles.tabs}><GiSupersonicBullet /></div></button>
+                <button onClick={() => setPage(page + 1)} className={styles.button}><div className={styles.tabs}><HiArrowRight /></div></button>
             </div>
             <CoinsTable data={filteredCoins} />
         </div>
