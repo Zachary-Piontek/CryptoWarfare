@@ -16,12 +16,9 @@ export default function Footer() {
     })
   }, [])
 
-  console.log(data);
-
   if (!data) {
     return null;
   }
-
 
   return (
     <footer className="footer">

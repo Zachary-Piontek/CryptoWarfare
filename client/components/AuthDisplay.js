@@ -1,22 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signOut, signUp, signIn } from "../services/users.js";
+import { signUp, signIn } from "../services/users.js";
 import styles from './authdisplay.module.css';
 
 export default function AuthDisplay(props) {
   const [form, setForm] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
-  const handleSignOut = () => {
-    signOut()
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((err) => {
-        setError(err);
-      });
-  };
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -98,7 +88,6 @@ export default function AuthDisplay(props) {
       </form>
       </div>
       <div className={styles.authDiv}>
-      <button className={styles.authButton} onClick={handleSignOut}>Sign Out</button>
       {error && <p>{error}</p>}
       </div>
     </div>

@@ -39,8 +39,6 @@ export default function Home() {
     }
     
     if (!coins.length) return <Loader />;
-
-    console.log(page);
     
     return (
         <div>

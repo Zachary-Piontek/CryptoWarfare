@@ -22,8 +22,8 @@ root.render(
     <Header />
       <Routes>
           <Route path='/favorites' element={ <Favorites /> } />
-          <Route path="/" element={ <Home /> } />
           <Route path="/auth" element={ <AuthDisplay /> } />
+          <Route path="/" element={ <Home /> } />
           <Route path="*" element={ <div className={styles.notThere}>404</div> } />
       </Routes>
     <Footer />
