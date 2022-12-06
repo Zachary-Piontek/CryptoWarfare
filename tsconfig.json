@@ -23,8 +23,7 @@
       "jest",
       "react",
       "react-dom/experimental",
-      "react-dom/next",
-      "ts-jest"
+      "react-dom/next"
     ],
     "useUnknownInCatchVariables": true
   }
