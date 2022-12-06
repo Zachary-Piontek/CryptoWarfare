@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+import Wallets from '../../components/Wallets/index.jsx';
 import styles from './nfts.module.css';
 
 export default function Nfts() {
@@ -52,6 +53,7 @@ export default function Nfts() {
                         </div>
                     </div>
                 ))}
+                <Wallets />
             </div>
         </div>
     );
