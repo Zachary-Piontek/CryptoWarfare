@@ -1,11 +1,10 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 export default {
   extensionsToTreatAsEsm: ['.jsx'],
-  preset: 'ts-jest',
   setupFiles: ['dotenv/config', './setup-tests.js'],
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect',
-    './setup-tests-after.ts',
+    './setup-tests-after.js',
   ],
   "moduleFileExtensions": [
     "js",
