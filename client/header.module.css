@@ -1,33 +1,35 @@
-.Header {
-  z-index: 1000;
-  position: sticky;
-  top: 0;
-  padding-right: var(--padding);
-  height: var(--header-height);
-
-  background: var(--header-color);
-  color: var(--white-color);
-
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 20px;
-  align-items: center;
-
+.userName {
+    color: whitesmoke;
+    margin-bottom: 1vh;
+    text-shadow: gold 0px 0px 5px;
+    font: 1.5em 'Roboto';
 }
 
-.NavigationContainer {
-  display: none;
-  justify-self: end;
+.appName {
+    display: grid;
+    justify-items: center;
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px goldenrod;
+    margin-bottom: 1vh;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-@media (min-width: 700px) {
-  padding-left: var(--padding);
+.appNameDiv {
+    display: grid;
+    grid-template-columns: 14fr 1fr;
+    margin-bottom: 1vh;
+    width: 100vw;
+}
 
-  .MenuContainer {
-    display: none;
-  }
-
-  .NavigationContainer {
-    display: initial;
-  }
+.signOutButton {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background-color: goldenrod;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-bottom: 1vh;
 }

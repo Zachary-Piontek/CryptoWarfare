@@ -1,4 +1,47 @@
 body {
-  background-color: var(--background-color);
-  color: var(--color);
+    min-height: 100vh;
+    background-color: rgb(109, 136, 137);
+    background-image: url(./public/warfare-header.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Courier New", Courier, monospace;
+}
+
+header {
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+section {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 1vh;
+}
+
+h2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    font-size: 2rem;
+    width: 100vw;
+    color: whitesmoke;
+}
+
+
+

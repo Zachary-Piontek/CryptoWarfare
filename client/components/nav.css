@@ -1,0 +1,19 @@
+nav a {
+    display: grid;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-shadow: -1px 1px 0px whitesmoke,
+                 -2px 2px 0px black,
+                 -3px 3px 0px goldenrod;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 5px;
+    grid-gap: 1rem;
+    width: 100vw;
+}
