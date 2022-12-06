@@ -10,6 +10,7 @@ import { UserProvider } from './context/userContext.js';
 import Favorites from './pages/Favorites/index.jsx';
 import Home from './pages/Home/index.jsx';
 import styles from './noinfo.module.css';
+import Nfts from './pages/Nfts/index.jsx';
 
 const container = document.getElementById('app') || document.createElement('div')
 container.id = 'app'
@@ -21,6 +22,7 @@ root.render(
     <UserProvider>
     <Header />
       <Routes>
+          <Route path='/nfts' element={ <Nfts /> } />
           <Route path='/favorites' element={ <Favorites /> } />
           <Route path="/auth" element={ <AuthDisplay /> } />
           <Route path="/" element={ <Home /> } />
