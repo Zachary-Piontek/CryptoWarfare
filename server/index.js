@@ -8,11 +8,11 @@
  * Any deployments will need to execute the transpiled version of this file.
  ******************************************************************************/
 
-import dotenv from 'dotenv'
-import app from './app.js'
-
-dotenv.config()
-
+ import dotenv from 'dotenv' // use for import env backend only
+ import app from './app.js'
+ 
+ dotenv.config() // use for import env backend only
+ 
 const server = app.listen(parseInt(process.env.PORT || '7890'), () => {
   console.log('Started server on ', server.address())
 })
