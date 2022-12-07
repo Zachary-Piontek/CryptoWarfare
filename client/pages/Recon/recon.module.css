@@ -1,8 +1,38 @@
 .recon {
     display: grid;
     justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
     padding: 20px;
     margin-top: 20px;
-    font-size: 3rem;
+    font-size: 2rem;
     color: whitesmoke;
+}
+
+.events {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+.event {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+.aLink {
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
 }
