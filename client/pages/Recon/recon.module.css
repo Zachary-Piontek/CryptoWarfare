@@ -6,27 +6,27 @@
     align-items: center;
     padding: 20px;
     margin-top: 20px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: whitesmoke;
 }
 
-.events {
+.news {
     display: grid;
     justify-content: center;
     justify-items: center;
     align-content: center;
     align-items: center;
-    padding: 20px;
-    margin-top: 20px;
     color: whitesmoke;
 }
 
-.event {
+.article {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     justify-items: center;
     align-content: center;
     align-items: center;
+    width: 60vw;
     padding: 20px;
     margin-top: 20px;
     color: whitesmoke;
@@ -35,4 +35,19 @@
 .aLink {
     color: whitesmoke;
     text-shadow: 2px 2px 2px black;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.aLink:hover {
+    color: rgb(197, 141, 0);
+    text-shadow: 2px 2px 2px black;
+}
+
+.aLink:visited {
+    color: rgb(26, 0, 0);
 }

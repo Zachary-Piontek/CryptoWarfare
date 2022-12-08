@@ -1,10 +1,16 @@
 body {
     min-height: 100vh;
     background-color: rgb(109, 136, 137);
+    background-attachment: fixed;
     background-image: url(./public/warfare-header.jpeg);
-    background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1,
