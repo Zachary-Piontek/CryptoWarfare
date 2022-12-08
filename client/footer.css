@@ -2,26 +2,24 @@
 
 footer {
     display: grid;
-    grid-template-columns: repeat(50, 1fr);
+    grid-template-columns: repeat(250, 1fr);
     justify-content: center;
-    position: fixed;
     bottom: 0;
     max-height: 10vh;
     min-height: 10vh;
     grid-gap: 3rem;
+    animation: moving 120s linear infinite;
 }
 
 
 img {
-    max-height: 7.5vh;
+    max-height: 5.5vh;
 }
 
 footer div {
-    animation: moving 120s linear infinite;
     display: grid;
-    grid-template-columns: repeat(50, 1fr);
     justify-content: center;
-    grid-gap: 0.5rem;
+    grid-gap: 1rem;
 }
 
 @keyframes moving {
@@ -29,6 +27,6 @@ footer div {
         transform: translateX(-1500%);
     }
     100% {
-        transform: translateX(1000%);
+        transform: translateX(1500%);
     }
 }

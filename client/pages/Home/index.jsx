@@ -5,6 +5,7 @@ import './home.css';
 import Loader from "../../components/Loader/index.jsx";
 import styles from './home.module.css';
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
+import Footer from "../../footer.js";
 
 export default function Home() {
     const [coins, setCoins] = useState([]);
@@ -51,6 +52,7 @@ export default function Home() {
                 <button onClick={() => setPage(page + 1)} className={styles.button}><div className={styles.tabs}><HiArrowRight /></div></button>
             </div>
             <CoinsTable data={filteredCoins} />
+            <Footer />
         </div>
     );
 } 
