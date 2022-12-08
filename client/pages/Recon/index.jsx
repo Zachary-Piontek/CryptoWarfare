@@ -23,7 +23,8 @@ export default function Recon() {
 
   return (
     <div className={styles.recon}>
-      <h1>Recon</h1>
+      <h1 className={styles.header}>Reports</h1>
+      <div className={styles.newsContainer}>
       <div className={styles.news}>
         {news.map((article) => (
           <div key={article.id} className={styles.article}>
@@ -31,6 +32,7 @@ export default function Recon() {
             <a href={article.link} className={styles.aLink}><p className={styles.title}>{article.title}</p></a>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );

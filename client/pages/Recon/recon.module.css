@@ -1,13 +1,29 @@
 .recon {
     display: grid;
     justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-top: 20px;
-    font-size: 1.5rem;
-    color: whitesmoke;
+    grid-gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    max-height: 70vh;
+}
+
+.newsContainer {
+    display: grid;
+    justify-content: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    max-height: 70vh;
+    overflow: auto;
+    border-radius: 10rem;
+}
+
+.recon::-webkit-scrollbar {
+    display: none;
+}
+
+.newsContainer::-webkit-scrollbar {
+    display: none;
 }
 
 .news {
@@ -17,6 +33,10 @@
     align-content: center;
     align-items: center;
     color: whitesmoke;
+    background-image: url(/client/public/metal-texture-background.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .article {
@@ -50,4 +70,15 @@
 
 .aLink:visited {
     color: rgb(26, 0, 0);
+}
+
+.header {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
+    font-size: 2rem;
 }
