@@ -16,7 +16,7 @@
     max-height: 70vh;
     overflow: auto;
     border-radius: 10rem;
-    border: solid 1px black;
+    border: solid 3px black;
     background-image: url(/client/public/metal-texture-background.jpeg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -87,6 +87,7 @@
 #image {
     border: solid 1px whitesmoke;
     border-radius: 1rem;
-    width: auto;
-    height: 100%;
+    min-width: 100px;
+    min-height: 75px;
+    margin-right: 10px;
 }

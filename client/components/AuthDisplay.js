@@ -87,11 +87,7 @@ export default function AuthDisplay(props) {
         <button className={styles.authButton} type="submit">Sign In</button>
       </form>
       </div>
-      <div className={styles.authDiv}>
-      {error && <p>{error}</p>}
-      </div>
     </div>
-
   );
 }
 

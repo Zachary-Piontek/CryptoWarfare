@@ -16,8 +16,6 @@ export default function Recon() {
       .catch((err) => console.log(err)); 
   }, []);
 
-  console.log(news);
-
   if (loading) return <div>Loading...</div>;
 
   return (
@@ -27,8 +25,8 @@ export default function Recon() {
       <div className={styles.news}>
         {news.map((article) => (
           <div key={article.id} className={styles.article}>
-            <img src={article.imgURL} id={styles.image}/>
-            <a href={article.link} className={styles.aLink}><p className={styles.title}>{article.title}</p></a>
+          <img src={article.imgURL} id={styles.image} onError={(e)=>{e.target.onerror = null; e.target.src="https://loremflickr.com/320/240/crypto"}}/>
+          <a href={article.link} className={styles.aLink}><p className={styles.title}>{article.title}</p></a>
           </div>
         ))}
         </div>
