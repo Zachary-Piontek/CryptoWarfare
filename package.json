@@ -15,7 +15,7 @@
     "start:web": "webpack serve --hot --mode development --devtool eval-source-map",
     "start:web:watch": "npm run start",
     "build:web": "webpack --devtool source-map",
-    "build:server": "mkdir -p dist ; cp -R server/dist",
+    "build:server": "cp -R server/dist",
     "build": "npm-run-all --parallel build:web build:server"
   },
   "keywords": [],
