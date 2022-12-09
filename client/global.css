@@ -49,5 +49,14 @@ h2 {
     color: whitesmoke;
 }
 
-
-
+@media screen and (max-width: 450px) {
+    .homeDiv {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        width: 10vw;
+    }
+}

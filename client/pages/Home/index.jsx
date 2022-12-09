@@ -42,7 +42,7 @@ export default function Home() {
     if (!coins.length) return <Loader />;
     
     return (
-        <div>
+        <div className={styles.homeDiv}>
             <div className={styles.searchDiv}>
                 <button onClick={prevPage} className={styles.button}><div className={styles.tabs}><HiArrowLeft /></div></button>
                 <form className={styles.form}>
