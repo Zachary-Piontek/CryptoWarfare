@@ -5,6 +5,7 @@ import styles from './nfts.module.css';
 
 export default function Nfts() {
     const [nfts, setNfts] = useState([]);
+    const [tokenImage, setTokenImage] = useState([]);
     let walletAddress = '0x8e78706410bfF0F080E63730B58c5DcF4a394E01';
     // place holder for wallet address
     
@@ -12,7 +13,7 @@ export default function Nfts() {
         method: 'GET',
         url: `https://deep-index.moralis.io/api/v2/${walletAddress}/nft`,
         params: {format: 'decimal', normalizeMetadata: 'false'},
-        headers: {accept: 'application/json', 'X-API-Key': 'test'}
+        headers: {accept: 'application/json', 'X-API-Key': '07H7LqrUEk1vJLheVg5JbODyPUrtPuRze0lcZ5rypkb2qyouRYfKPKVLz49c3PMN'}
     };
     
     useEffect(() => {
@@ -32,29 +33,31 @@ export default function Nfts() {
         });
     }
 
-    console.log(nfts);
-    console.log(nfts.token_uri);
-  
+    const token = nfts.map((nft) => {
+        return nft.token_uri.split('/').splice(4);
+    })
+
+    // concat token with https://ipfs.io/ipfs/
+    const tokenURI = token.map((token) => {
+        return 'https://ipfs.io/ipfs/' + token;
+    })
+
+    const nftImage = tokenURI.map((tokenURI) => {
+        return fetch(tokenURI)
+        .then(response => response.json())
+        .then(data => console.log(data.image))
+    })
+    
     return (
         <div className={styles.div}>
             <h1 className={styles.header}>NFTs</h1>
-            <div className={styles.nfts}>
             <form className={styles.form}>
             <input type="text" placeholder="wallet address"/>
             <button type="submit" onClick={walletAddresses}>Submit</button>
             </form>
-                {nfts.map((nft) => (
-                    <div className={styles.nft} key={nft.token_id}>
-                        <img src={nft.image} alt={nft.name}/>
-                        <div className={styles.nftInfo}>
-                            <p>{nft.token_uri}</p>
-                            <p>{nft.name}</p>
-                            <p>{nft.token_id}</p>                
-                        </div>
-                    </div>
-                ))}
+            <div className={styles.nft}>
                 <Wallets />
             </div>
         </div>
-    );
+    )
 }
