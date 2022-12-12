@@ -3,7 +3,6 @@ import Favorite from '../models/Favorite.js'
 import authenticate from '../middleware/authenticate.js'
 import fetch from 'node-fetch'
 
-
 const COINGECKO_API = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false';
 
 export default Router()
@@ -56,6 +55,15 @@ export default Router()
             const updatedFavorites = await Favorite.updateUserFavorites(req.user.id, coins_ids)
 
             res.status(201).json(updatedFavorites)
+        } catch (error) {
+            next(error);
+        }
+    })
+
+    .post('/', authenticate, async (req, res, next) => {
+        try {
+            const favorite = await Favorite.insert(req.body);
+            res.status(201).json(favorite);
         } catch (error) {
             next(error);
         }
