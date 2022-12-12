@@ -13,7 +13,7 @@ export default function Nfts() {
         method: 'GET',
         url: `https://deep-index.moralis.io/api/v2/${walletAddress}/nft`,
         params: {format: 'decimal', normalizeMetadata: 'false'},
-        headers: {accept: 'application/json', 'X-API-Key': '07H7LqrUEk1vJLheVg5JbODyPUrtPuRze0lcZ5rypkb2qyouRYfKPKVLz49c3PMN'}
+        headers: {accept: 'application/json', 'X-API-Key': 'test'}
     };
     
     useEffect(() => {
@@ -42,11 +42,14 @@ export default function Nfts() {
         return 'https://ipfs.io/ipfs/' + token;
     })
 
+    console.log(tokenURI);
+
     const nftImage = tokenURI.map((tokenURI) => {
         return fetch(tokenURI)
         .then(response => response.json())
         .then(data => console.log(data.image))
     })
+
     
     return (
         <div className={styles.div}>
