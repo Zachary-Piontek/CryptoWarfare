@@ -21,6 +21,11 @@
   cursor: pointer;
 }
 
+.favoriteButton:hover {
+  color: black;
+  background-color: whitesmoke;
+}
+
 .coinsTable {
   display: grid;
   justify-content: center;
@@ -45,6 +50,10 @@
   align-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
+}
+
+.coinName:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 500px) {

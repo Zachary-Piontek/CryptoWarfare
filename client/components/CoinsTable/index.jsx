@@ -43,7 +43,7 @@ export default function CoinsTable({ data, refetchData = async () => false }) {
                     return (
                 <div key={coin.id} className={styles.coin}>
                         <img src={coin.image} alt={coin.name} />
-                        <Link to={`/coin/${coin.id}`} element={<Coin />} ><p className="coin-name">{coin.name}</p>
+                        <Link to={`/coin/${coin.id}`} element={<Coin />} ><p className={styles.coinName}>{coin.name}</p>
                         </Link>
                         <p className="coin-price">${coin.current_price}</p>
                         <p className='market-cap'>${coin.market_cap.toLocaleString()}</p>

@@ -1,0 +1,17 @@
+.detailPage {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: goldenrod;
+    margin: 1rem;
+}
+
+.detailPageData {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+}
