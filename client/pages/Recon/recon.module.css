@@ -18,8 +18,6 @@
     border-radius: 10rem;
     border: solid 3px black;
     background-image: url(/client/public/metal-texture-background.jpeg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     background-position: center;
 }
 
