@@ -1,4 +1,7 @@
-const BASE_URL = 'http://localhost:7891/api/v1';
+// const BASE_URL = 'http://localhost:7891/api/v1';
+// use this for local
+const BASE_URL = '/api/v1';
+
 
 export async function signUp(user) {
     const res = await fetch(`${BASE_URL}/users`, {

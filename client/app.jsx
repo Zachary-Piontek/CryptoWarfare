@@ -5,7 +5,6 @@ import './global.css';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AuthDisplay from './components/AuthDisplay.js';
 import Header from './header.jsx';
-import Footer from './footer.js';
 import { UserProvider } from './context/userContext.js';
 import Favorites from './pages/Favorites/index.jsx';
 import Home from './pages/Home/index.jsx';
@@ -30,7 +29,6 @@ root.render(
           <Route path="/" element={ <Home /> } />
           <Route path="*" element={ <div className={styles.notThere}>404</div> } />
       </Routes>
-    <Footer />
     </UserProvider>
     </Router>
   </React.StrictMode>

@@ -1,6 +1,7 @@
 import './footer.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './footer.module.css';
 
 export default function Footer() {
 
@@ -25,7 +26,7 @@ export default function Footer() {
       {data.map(coin => {
         return ( 
           <div key={coin.id}>
-            <img src={coin.image} alt={coin.name} />             
+            <img src={coin.image} alt={coin.name} className={styles.coinImage} />             
           </div>
         )
       }

@@ -1,8 +1,93 @@
 .recon {
     display: grid;
     justify-content: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    max-height: 70vh;
+}
+
+.newsContainer {
+    display: grid;
+    justify-content: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    max-height: 70vh;
+    overflow: auto;
+    border-radius: 10rem;
+    border: solid 3px black;
+    background-image: url(/client/public/metal-texture-background.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.recon::-webkit-scrollbar {
+    display: none;
+}
+
+.newsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.news {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    width: 60vw;
     padding: 20px;
     margin-top: 20px;
-    font-size: 3rem;
     color: whitesmoke;
+}
+
+.aLink {
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.aLink:hover {
+    color: rgb(197, 141, 0);
+    text-shadow: 2px 2px 2px black;
+}
+
+.aLink:visited {
+    color: rgb(26, 0, 0);
+}
+
+.header {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
+    font-size: 2rem;
+}
+
+#image {
+    border: solid 1px whitesmoke;
+    border-radius: 1rem;
+    min-width: 100px;
+    min-height: 75px;
+    margin-right: 10px;
 }

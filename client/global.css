@@ -2,9 +2,15 @@ body {
     min-height: 100vh;
     background-color: rgb(109, 136, 137);
     background-image: url(./public/warfare-header.jpeg);
-    background-position: center;
-    background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1,
@@ -39,9 +45,17 @@ h2 {
     justify-content: center;
     justify-items: center;
     font-size: 2rem;
-    width: 100vw;
     color: whitesmoke;
 }
 
-
-
+@media screen and (max-width: 450px) {
+    .homeDiv {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        width: 10vw;
+    }
+}

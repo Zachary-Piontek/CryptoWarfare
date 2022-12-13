@@ -17,3 +17,23 @@
     align-items: center;
     margin-top: 1rem;
 }
+
+.nftInfo {
+    display: grid;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.nft {
+    display: grid;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1rem;
+}

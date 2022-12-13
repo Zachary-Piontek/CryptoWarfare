@@ -28,4 +28,6 @@
     font-size: 2rem;
     color: black;
     text-shadow: whitesmoke 0px 0px 10px;
+    border: solid 1px black;
+    background-color: goldenrod;
 }

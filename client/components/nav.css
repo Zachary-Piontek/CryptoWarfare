@@ -17,3 +17,24 @@ nav {
     grid-gap: 1rem;
     width: 100vw;
 }
+
+@media (max-width: 500px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        grid-gap: 0.5rem;
+        font-size: 1rem;
+    }
+
+    nav a {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+    }
+}
