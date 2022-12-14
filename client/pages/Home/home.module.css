@@ -31,3 +31,20 @@
     border: solid 1px black;
     background-color: goldenrod;
 }
+
+@media (max-width: 500px) {
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        color: whitesmoke;
+        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+        font-size: 1.5rem;
+    }
+
+    .searchDiv {
+        display: grid;
+        justify-items: center;
+        margin: 0;
+    }
+}
