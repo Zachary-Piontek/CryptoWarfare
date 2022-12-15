@@ -8,6 +8,7 @@
 .appName {
     display: grid;
     justify-items: center;
+    align-items: center;
     font-size: 4rem;
     color: rgb(255, 255, 255);
     text-shadow: 0 0 15px goldenrod;
