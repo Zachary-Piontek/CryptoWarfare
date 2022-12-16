@@ -10,6 +10,7 @@ main {
     border: 2px solid black;
     margin-right: 5vw;
     margin-left: 5vw;
+    min-width: 90vw;
 }
 
 main::-webkit-scrollbar {

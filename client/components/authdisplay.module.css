@@ -26,5 +26,11 @@
 .authDiv {
     border: solid 3px black;
     background-color: goldenrod;
-    width: 50vw;
+    width: 60vw;
+}
+
+@media (max-width: 500px) {
+    .authDiv {
+        width: 80vw;
+    }
 }

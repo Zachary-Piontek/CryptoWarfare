@@ -9,7 +9,9 @@
     margin: 2rem;
     overflow: auto;
     max-height: 80vh;
-    padding: 1rem;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    padding-top: 1rem;
 }
 
 .detailPage::-webkit-scrollbar {
