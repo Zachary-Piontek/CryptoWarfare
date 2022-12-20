@@ -26,10 +26,10 @@
 .tabs {
     size: 2rem;
     font-size: 2rem;
-    color: black;
+    color: coral;
     text-shadow: whitesmoke 0px 0px 10px;
-    border: solid 1px black;
-    background-color: goldenrod;
+    border: solid 1px coral;
+    background-color: black;
 }
 
 @media (max-width: 500px) {

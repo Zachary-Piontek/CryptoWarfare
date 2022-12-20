@@ -16,9 +16,8 @@
     max-height: 70vh;
     overflow: auto;
     border-radius: 10rem;
-    border: solid 3px black;
-    background-image: url(/client/public/metal-texture-background.jpeg);
-    background-position: center;
+    border: solid 3px coral;
+    background-image: url(../../public/Blockchains.png);
     background-size: cover;
 }
 

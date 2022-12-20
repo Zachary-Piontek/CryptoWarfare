@@ -97,7 +97,7 @@ useEffect(() => {
             <h1>{marketData}</h1>
             <p>{description}</p>
             {/* {coin.market_data?.current_price ? <p>Current Price: ${coin.market_data.current_price.usd.toLocaleString()}</p> : null} */}
-            {/* <p>{coin.market_data.current_price.usd.toLocaleString()}</p> */}
+            {/* <p>{coin.market_data?.current_price.usd.toLocaleString()}</p> */}
             {/* <p>{coin.market_data.current_price.usd}</p> */}
         </div>
     )
