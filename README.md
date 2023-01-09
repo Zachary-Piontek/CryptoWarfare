@@ -54,9 +54,7 @@ $ createdb
 ### The Application Itself
 
 The application can be started with `npm start`, and browsing to
-[http://localhost:7891](http://localhost:7891). The only route it serves right
-now is `/foos` which can be reached at
-[http://localhost:7891/foos](http://localhost:7891/foos). 
+[http://localhost:7891](http://localhost:7891).
 
 ## Testing
 
