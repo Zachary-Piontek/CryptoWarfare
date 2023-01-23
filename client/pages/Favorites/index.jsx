@@ -6,6 +6,7 @@ import Loader from "../../components/Loader/index.jsx";
 
 export default function Favorites() {
     const [favoritesData, setFavoritesData] = useState([])
+    const [amount, setAmount] = useState(0)
     const [loading, setLoading] = useState(true)
   
     useEffect(() => {
@@ -22,6 +23,15 @@ export default function Favorites() {
       setFavoritesData(res)  
     }
 
+    // add up the total amount of coins in the favorites
+    useEffect(() => {
+      let total = 0
+      favoritesData.forEach(coin => {
+        total += coin.current_price
+      })
+      setAmount(total)
+    }, [favoritesData])
+
     if (loading) return <Loader />
   
     return (
@@ -31,6 +41,9 @@ export default function Favorites() {
             data={favoritesData}
             refetchData={refetchData}
           />
+        <div className={styles.total}>
+          <p>Total: {amount}</p>
+        </div>
         </div>
       </div>
     )

@@ -93,3 +93,16 @@ export async function addCoinToUserFavorites(coin_id) {
 
     return await res.json()
 }
+
+export async function addTotalToUserFavorites(total) {
+    const res = await fetch(`${BASE_URL}/favorites/add/total/userfavorites`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ total }),
+    })
+
+    return await res.json()
+}
