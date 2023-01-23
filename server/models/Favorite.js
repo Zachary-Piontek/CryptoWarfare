@@ -37,4 +37,13 @@ export default class Coin {
             console.log(error)
         }
     }
+    
+    static async addTotalUserFavorites(user_id, total) {
+        try {
+            await pool.query('UPDATE users_favorite_coins SET total = $1 WHERE user_id = $2', [total, user_id]);
+            return this.getUserFavorites(user_id)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }

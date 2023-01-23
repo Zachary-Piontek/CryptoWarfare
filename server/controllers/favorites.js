@@ -60,6 +60,18 @@ export default Router()
         }
     })
 
+    // add total amount of coins to user favorites
+    .post('/add/total/userfavorites',authenticate, async (req, res, next) => {
+        const { total } = req.body
+        try {
+            const updatedFavorites = await Favorite.updateUserFavoritesTotal(req.user.id, total)
+
+            res.status(201).json(updatedFavorites)
+        } catch (error) {
+            next(error);
+        }
+    })
+
     .post('/', authenticate, async (req, res, next) => {
         try {
             const favorite = await Favorite.insert(req.body);
