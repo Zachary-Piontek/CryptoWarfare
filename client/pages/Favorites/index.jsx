@@ -41,9 +41,9 @@ export default function Favorites() {
             data={favoritesData}
             refetchData={refetchData}
           />
+        </div>
         <div className={styles.total}>
           <p>Total: {amount}</p>
-        </div>
         </div>
       </div>
     )
