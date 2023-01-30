@@ -26,12 +26,18 @@ export default function Home() {
         .catch((error) => console.log(error));
     }, [page]);
     
-    const handleChange = e => {
+
+    const handleChange = (e) => {
         setSearch(e.target.value);
-        setFilteredCoins(coins.filter(coin =>
-            coin.name.toLowerCase().includes(search.toLowerCase())
-            ));
-        }
+    }
+
+    useEffect(() => {
+        setFilteredCoins(
+            coins.filter((coin) =>
+                coin.name.toLowerCase().includes(search.toLowerCase())
+            )
+        );
+    }, [search, coins]);
 
     const prevPage = () => {
         if (page > 1) {

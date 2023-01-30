@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/userContext.js";
 import { GiBulletBill, GiTargetArrows } from "react-icons/gi";
 import styles from './style.module.css';
+import { Link } from "react-router-dom";
+import Coin from '../Coin';
 
 export default function CoinsTable({ data, refetchData = async () => false }) {
     const [userFavorites, setUserFavorites] = useState()
@@ -41,7 +43,8 @@ export default function CoinsTable({ data, refetchData = async () => false }) {
                     return (
                 <div key={coin.id} className={styles.coin}>
                         <img src={coin.image} alt={coin.name} />
-                        <p className="coin-name">{coin.name}</p>
+                        <Link to={`/coin/${coin.id}`} element={<Coin />} ><p className={styles.coinName}>{coin.name}</p>
+                        </Link>
                         <p className="coin-price">${coin.current_price}</p>
                         <p className='market-cap'>${coin.market_cap.toLocaleString()}</p>
                         <p className="coin-price">% {coin.price_change_percentage_24h}</p>

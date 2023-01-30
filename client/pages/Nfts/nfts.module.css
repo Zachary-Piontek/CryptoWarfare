@@ -2,10 +2,6 @@
     display: grid;
     font-size: 3rem;
     color: whitesmoke;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin-top: 2rem;
 }
 
 .div {
@@ -14,8 +10,11 @@
     color: whitesmoke;
     justify-content: center;
     justify-items: center;
+    justify-self: center;
+    align-content: center;
     align-items: center;
-    margin-top: 1rem;
+    align-self: center;
+    height: 70vh;
 }
 
 .nftInfo {
@@ -25,7 +24,6 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
-    margin-top: 1rem;
 }
 
 .nft {
@@ -35,5 +33,4 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
-    margin-top: 1rem;
 }

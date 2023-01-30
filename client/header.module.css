@@ -1,18 +1,20 @@
 .userName {
     color: whitesmoke;
     margin-bottom: 1vh;
-    text-shadow: gold 0px 0px 5px;
+    text-shadow: mediumturquoise 0px 0px 5px;
     font: 1.5em 'Roboto';
 }
 
 .appName {
     display: grid;
     justify-items: center;
+    align-items: center;
     font-size: 4rem;
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 15px goldenrod;
+    color: black;
     margin-bottom: 1vh;
     font-family: 'Courier New', Courier, monospace;
+    margin: 1vh;
+    text-shadow: 3px 2px 1px coral, 5px 4px 3px mediumturquoise
 }
 
 .appNameDiv {
@@ -28,10 +30,11 @@
     justify-items: center;
     align-items: center;
     align-content: center;
-    background-color: goldenrod;
-    border: solid 1px black;
+    background-color: black;
+    border: solid 1px mediumturquoise;
     border-radius: 5px;
     margin-bottom: 1vh;
+    color: whitesmoke;
 }
 
 @media (max-width: 500px) {
@@ -42,6 +45,6 @@
         align-items: center;
         align-content: center;
         grid-template-columns: 1fr;
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }

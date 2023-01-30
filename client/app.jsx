@@ -11,6 +11,7 @@ import Home from './pages/Home/index.jsx';
 import styles from './noinfo.module.css';
 import Nfts from './pages/Nfts/index.jsx';
 import Recon from './pages/Recon/index.jsx';
+import Coin from './components/Coin/index.jsx';
 
 const container = document.getElementById('app') || document.createElement('div')
 container.id = 'app'
@@ -26,6 +27,9 @@ root.render(
           <Route path='/nfts' element={ <Nfts /> } />
           <Route path='/favorites' element={ <Favorites /> } />
           <Route path="/auth" element={ <AuthDisplay /> } />
+          <Route path='/coin' element={ <Coin /> } >
+            <Route path=':coinId' element={ <Coin /> } />
+          </Route>
           <Route path="/" element={ <Home /> } />
           <Route path="*" element={ <div className={styles.notThere}>404</div> } />
       </Routes>

@@ -4,11 +4,14 @@ footer {
     display: grid;
     grid-template-columns: repeat(250, 1fr);
     justify-content: center;
+    align-items: center;
     bottom: 0;
     max-height: 10vh;
     min-height: 10vh;
     grid-gap: 3rem;
-    animation: moving 120s linear infinite;
+    animation: moving 360s linear infinite;
+    position: fixed;
+    z-index: -1;
 }
 
 
@@ -24,9 +27,9 @@ footer div {
 
 @keyframes moving {
     0% {
-        transform: translateX(-1500%);
+        transform: translateX(-100%);
     }
     100% {
-        transform: translateX(1500%);
+        transform: translateX(100%);
     }
 }

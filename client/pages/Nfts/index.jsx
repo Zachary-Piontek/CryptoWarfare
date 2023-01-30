@@ -53,7 +53,7 @@ export default function Nfts() {
     
     return (
         <div className={styles.div}>
-            <h1 className={styles.header}>NFTs</h1>
+            <h1 className={styles.header}>NFTs Display Feature In Development</h1>
             <form className={styles.form}>
             <input type="text" placeholder="wallet address"/>
             <button type="submit" onClick={walletAddresses}>Submit</button>

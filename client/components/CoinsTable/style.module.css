@@ -21,6 +21,11 @@
   cursor: pointer;
 }
 
+.favoriteButton:hover {
+  color: black;
+  background-color: whitesmoke;
+}
+
 .coinsTable {
   display: grid;
   justify-content: center;
@@ -47,6 +52,10 @@
   font-size: 1rem;
 }
 
+.coinName:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 500px) {
   .coinsTable {
     display: grid;
@@ -58,11 +67,11 @@
     grid-gap: 1rem;
     padding: 1rem;
     margin: 0;
-    background-color: goldenrod;
+    background-color: rgb(32, 32, 32);
     max-height: 70vh;
     overflow: auto;
     border-radius: 1rem;
-    border: 2px solid black;
+    border: 2px solid coral;
     margin-right: 15vw;
     margin-left: 15vw;
   }
@@ -81,7 +90,7 @@
     grid-gap: 1rem;
     padding: 1rem;
     margin: 0;
-    background-color: goldenrod;
+    background-color: rgb(32, 32, 32);
     max-height: 70vh;
     overflow: auto;
     border-radius: 1rem;
@@ -100,7 +109,7 @@
     grid-gap: 1rem;
     padding: 1rem;
     margin: 0;
-    background-color: goldenrod;
+    background-color: rgb(32, 32, 32);
     max-height: 70vh;
     overflow: auto;
     border-radius: 1rem;
