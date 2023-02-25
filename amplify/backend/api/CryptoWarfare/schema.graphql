@@ -1,0 +1,22 @@
+type UsersFavoriteCoins @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  user_id: ID
+  coins_id: String
+}
+
+type Coins @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  symbol: String
+  price: Int
+  market_cap: Int
+  percent_change_24h: Int
+  favorite: Boolean
+}
+
+type Users @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String
+  email: String
+  password_hash: String
+}
