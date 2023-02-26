@@ -11,6 +11,7 @@ create table users (
   password_hash text not null
 );
 
+
 create table coins (
   id bigint generated always as identity primary key,
   name text not null,
