@@ -37,4 +37,5 @@ export default class Coin {
             console.log(error)
         }
     }
+
 }

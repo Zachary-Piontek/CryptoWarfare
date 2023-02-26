@@ -11,6 +11,7 @@ create table users (
   password_hash text not null
 );
 
+
 create table coins (
   id bigint generated always as identity primary key,
   name text not null,
@@ -24,8 +25,7 @@ create table coins (
 create table users_favorite_coins (
   id bigint generated always as identity primary key,
 	user_id bigint null,
-	coins_ids text null,
-  amount numeric null
+	coins_ids text null
 );
 
 insert into users (username, email, password_hash) 

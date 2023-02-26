@@ -6,6 +6,7 @@ import Loader from "../../components/Loader/index.jsx";
 
 export default function Favorites() {
     const [favoritesData, setFavoritesData] = useState([])
+
     const [loading, setLoading] = useState(true)
   
     useEffect(() => {

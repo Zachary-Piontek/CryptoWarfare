@@ -64,7 +64,7 @@ export default function AuthDisplay(props) {
           value={form.password}
           onChange={handleChange}
         />
-        <button className={styles.authButton} type="submit">Register</button>
+        <button className={styles.authButton} type="submit">Register Now</button>
       </form>
       </div>
       <div className={styles.authDiv}>
