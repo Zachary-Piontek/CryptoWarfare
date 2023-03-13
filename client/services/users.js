@@ -1,7 +1,6 @@
 // const BASE_URL = 'http://localhost:7891/api/v1';
 // use this for local
-// const BASE_URL = '/api/v1';
-const BASE_URL = 'https://newdetails.d3fh9ibto9nca8.amplifyapp.com/';
+const BASE_URL = '/api/v1';
 
 
 export async function signUp(user) {
